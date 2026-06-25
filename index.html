@@ -4,39 +4,515 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akhriii Sans Tk Pyaar Krunga</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS STYLING INCLUDED DIRECTLY HERE */
+        :root {
+            --bg-yellow: #fefae0;
+            --panel-gradient: linear-gradient(180deg, #fffcf2 0%, #fff3cd 100%);
+            --text-brown: #6c584c;
+            --gold: #b57c1e;
+            --pink: #ff758f;
+            --border-light: #ffe8a1;
+        }
+
+        body {
+            background-color: var(--bg-yellow);
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 20px 12px;
+            display: flex;
+            justify-content: center;
+            color: var(--text-brown);
+        }
+
+        .main-container {
+            max-width: 650px;
+            width: 100%;
+            background: var(--panel-gradient);
+            border-radius: 24px;
+            padding: 25px;
+            box-shadow: 0px 10px 30px rgba(181, 124, 30, 0.12);
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            box-sizing: border-box;
+        }
+
+        /* Titles */
+        .cursive-title {
+            font-family: 'Alex Brush', cursive;
+            font-size: 3.8rem;
+            color: var(--gold);
+            margin: 10px 0 0 0;
+            font-weight: normal;
+        }
+
+        .bold-heading {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin: 25px 0 15px 0;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #8c786c;
+            margin: 5px 0 25px 0;
+        }
+
+        /* Top Feature Box */
+        .welcome-box {
+            background-color: #fffdf6;
+            border: 2px solid var(--border-light);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .welcome-box p {
+            color: #a06a28;
+            font-weight: 700;
+            margin: 5px 0;
+        }
+
+        .click-me-btn {
+            background-color: var(--pink);
+            color: white;
+            border: none;
+            padding: 10px 35px;
+            font-size: 1.1rem;
+            font-family: 'Fredoka', sans-serif;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 12px 0;
+            box-shadow: 0 4px 12px rgba(255, 117, 143, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .click-me-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .sub-text {
+            font-size: 0.85rem;
+            color: #bfaea5;
+            margin: 0;
+        }
+
+        /* Three Top Badges Row */
+        .badge-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .badge-card {
+            flex: 1;
+            background: #ffffff;
+            border: 1px solid #ffecb3;
+            border-radius: 12px;
+            padding: 12px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.02);
+        }
+
+        .badge-text {
+            text-align: left;
+            line-height: 1.3;
+        }
+
+        /* Interactive Cards Grid */
+        .games-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 550px) {
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .full-width-card {
+                grid-column: span 2;
+            }
+        }
+
+        .game-card {
+            background: #ffffff;
+            border: 1.5px solid #ffecb3;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+            box-sizing: border-box;
+        }
+
+        .game-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.2rem;
+            color: #d44760;
+            margin: 0 0 5px 0;
+        }
+
+        .game-desc {
+            font-size: 0.8rem;
+            color: #8c786c;
+            margin: 0 0 15px 0;
+        }
+
+        /* Game 1: Memory Hunt Buttons */
+        .emoji-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .memory-btn {
+            background: #fffcf2;
+            border: 1.5px solid #ffe8a1;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .memory-btn:hover { transform: scale(1.05); }
+
+        .memory-display-box {
+            background-color: #fffdf6;
+            border: 1px dashed #ffcca3;
+            border-radius: 10px;
+            padding: 10px;
+            min-height: 35px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #a06a28;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Game 2: Password Styles */
+        .pass-input {
+            width: 85%;
+            padding: 8px;
+            border: 1.5px solid #ffe8a1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            text-align: center;
+            outline: none;
+            margin-bottom: 8px;
+        }
+
+        .unlock-btn {
+            background-color: #ffca3a;
+            color: #6c584c;
+            font-weight: bold;
+            border: none;
+            padding: 8px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .pass-display {
+            margin-top: 12px;
+            font-weight: 700;
+            color: #d44760;
+            font-size: 0.9rem;
+        }
+
+        /* Game 3: Hidden Feeder Grid */
+        .feeder-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 240px;
+            margin: 0 auto 12px auto;
+        }
+
+        .feeder-btn {
+            background: #fffcf2;
+            border: 1.5px solid #ffe8a1;
+            border-radius: 12px;
+            font-size: 1.6rem;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .feeder-display {
+            background: #fffdf6;
+            border: 1px dashed #ffe8a1;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        /* Sliders & Counters Layout */
+        .tracker-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 550px) {
+            .tracker-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .love-slider {
+            width: 90%;
+            accent-color: var(--pink);
+        }
+
+        .heart-btn {
+            background: none;
+            border: none;
+            font-size: 3.5rem;
+            cursor: pointer;
+            padding: 0;
+            margin: 5px 0;
+            transition: transform 0.1s;
+        }
+        .heart-btn:active { transform: scale(0.9); }
+
+        .counter-pill {
+            background-color: var(--pink);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+        /* Reward Sticker Pop In Effect */
+        .sticker {
+            font-size: 2.2rem;
+            margin-top: 4px;
+            animation: pop 0.3s ease-out forwards;
+        }
+        @keyframes pop {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+
+        /* Letter Box Container */
+        .letter-container {
+            background-color: #fff5f6;
+            border: 2px solid #ffcad4;
+            border-radius: 20px;
+            margin-top: 25px;
+            padding: 15px;
+        }
+
+        .letter-scroll-area {
+            background-color: #ffffff;
+            border: 1px solid #ffe3e8;
+            border-radius: 12px;
+            height: 280px;
+            overflow-y: scroll;
+            padding: 15px;
+            text-align: left;
+            white-space: pre-wrap; /* Holds formatting completely intact */
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: #5c4d4d;
+            font-weight: 600;
+            scrollbar-width: thin;
+            scrollbar-color: #ffcad4 #ffffff;
+        }
+
+        .letter-scroll-area::-webkit-scrollbar { width: 5px; }
+        .letter-scroll-area::-webkit-scrollbar-thumb { background-color: #ffcad4; border-radius: 10px; }
+
+        .footer-text {
+            margin-top: 25px;
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
 
     <div class="main-container">
         
-        <header class="main-header">
-            <h1 class="main-title">Akhriii Sans Tk Pyaar Krunga</h1>
+        <header>
+            <h1 class="cursive-title">Akhriii Sans Tk Pyaar Krunga</h1>
             <p class="subtitle">A little world made with love for someone who means everything to me 💛</p>
             
             <div class="welcome-box">
                 <p>Helloo my jaan! Welcome to my little world 💞</p>
-                <button class="click-me-btn">Click Me 💛</button>
+                <button class="click-me-btn" onclick="alert('I love you so much contextually forever! 💋🥰')">Click Me 💛</button>
                 <p class="sub-text">Something cute is waiting for youu ♡</p>
             </div>
         </header>
 
-        <section class="badge-container">
+        <div class="badge-container">
             <div class="badge-card">
-                <span class="emoji">⭐</span>
+                <span>⭐</span>
                 <div class="badge-text"><strong>Made with</strong><br>Love 💖</div>
             </div>
             <div class="badge-card">
-                <span class="emoji">🎀</span>
+                <span>🎀</span>
                 <div class="badge-text"><strong>Just for</strong><br>Youu 💖</div>
             </div>
             <div class="badge-card">
-                <span class="emoji">🌸</span>
+                <span>🌸</span>
                 <div class="badge-text"><strong>Forever</strong><br>Yours 💞</div>
             </div>
-        </section>
+        </div>
+
+        <h2 class="bold-heading">✨ Fun Games For You 🎀</h2>
+
+        <div class="games-grid">
+            
+            <div class="game-card">
+                <h3 class="game-title">🎁 Memory Hunnt</h3>
+                <p class="game-desc">Click on the emojis to reveal the memory!</p>
+                <div class="emoji-row">
+                    <button class="memory-btn" onclick="showMemory(1)">🎁</button>
+                    <button class="memory-btn" onclick="showMemory(2)">🌸</button>
+                    <button class="memory-btn" onclick="showMemory(3)">⭐</button>
+                </div>
+                <div class="memory-display-box" id="memBox">Click an item above...</div>
+            </div>
+
+            <div class="game-card">
+                <h3 class="game-title">🔒 Secret Password</h3>
+                <p class="game-desc">Enter the secret to unlock!</p>
+                <input type="text" id="passIn" class="pass-input" placeholder="Enter password here...">
+                <button class="unlock-btn" onclick="verifyPassword()">Unlock ✨</button>
+                <div class="pass-display" id="passBox"></div>
+            </div>
+
+            <div class="game-card full-width-card">
+                <h3 class="game-title">🍼 Dhondo Kidelll ae Dudu</h3>
+                <p class="game-desc">Click any emoji... feeder kahin chupa hai! 👀</p>
+                <div class="feeder-grid">
+                    <button class="feeder-btn" onclick="seekFeeder(false, this)">🎀</button>
+                    <button class="feeder-btn" onclick="seekFeeder(false, this)">💖</button>
+                    <button class="feeder-btn" onclick="seekFeeder(false, this)">💛</button>
+                    <button class="feeder-btn" onclick="seekFeeder(true, this)">🐥</button>
+                    <button class="feeder-btn" onclick="seekFeeder(false, this)">🧸</button>
+                    <button class="feeder-btn" onclick="seekFeeder(false, this)">🌸</button>
+                </div>
+                <div class="feeder-display" id="feedBox">Find the hidden feeder!</div>
+            </div>
+
+        </div>
+
+        <div class="tracker-grid">
+            <div class="game-card">
+                <h3 class="game-title">💖 How Much Do You Love Mellaw?</h3>
+                <p class="game-desc">Slide the heart to show your love</p>
+                <input type="range" min="0" max="100" value="100" class="love-slider" oninput="document.getElementById('slideVal').innerText = this.value">
+                <p style="font-weight:bold; color:var(--pink); margin:8px 0 0 0;"><span id="slideVal">100</span>%</p>
+                <p style="font-size:0.8rem; margin:2px 0 0 0;">Infinite love for youuu! ♡</p>
+            </div>
+
+            <div class="game-card">
+                <h3 class="game-title">💖 Click The Heart</h3>
+                <p class="game-desc">Click the heart as many times as you can!</p>
+                <button class="heart-btn" onclick="clickCounter()">💗</button>
+                <br>
+                <span class="counter-pill" id="clickVal">0</span>
+            </div>
+        </div>
+
+        <div class="letter-container">
+            <h3 class="game-title" style="margin-bottom:10px;">💌 My Special Message 💌</h3>
+            <div class="letter-scroll-area">🎀💋🥺🫠 Melliwww Pyaaallliw Jawnnn! 🫠🥺💋🎀
+Yeh mehhh ounnn jarriwww! 🫠🫠💗
+Awptiii manooo!! Shotttiw shii mehnttt 😭🫂
+Mujhhhyyy klnaaa nhi ataaa tha plll sheeekh gaiunnn 🫠🫠💗
+
+Ummmm nmmm melllyyyy nooonewww 🫠🎀💋,
+Mellllyyhhh gulluwwwww! 🫠💗
+Mellliwww jawwwwnnn! 🎀🫠
+Melllyhhh gudddyhhh! 🍼💘
+Melllyhhh pyaaallyhhh bshyyyy 🎀💘🫂🫠🍼
+Olll mellllaawww “HAALLOOOONNN” 🫠🫠💋🎀
+
+Awwpkyyy annyyy shyyy melliwww zindagiii bowhttt pyariii olll color fulll ho gyi hhh 🫠🎀🌈
+Jeshyyy kisiii musawirrr nyyy rngggg bhrhhh diyehhh honn 💗🎨🫠
+
+TMHARYYY ANYYY SHY PEHLYYY TO DOSHTTT,
+MEH KUSHHH V NHI THIII 😭💋
+ABB MEH SHBB KUSHH HUNN 🫠🎀
+
+MELLAWWW AIK BABYH HHH SHOTTAWW SHARAWWW 😭🍼💋🎀🫠
+
+MELLAWWW AIK SHOHAR HHH
+(ZUBANII NIKAH HO CHUKA KLY KLY 🫠😭💍)
+
+OLL WOH MELLAW AIKK DOSHT B HHH 🫂💗
+
+OR SBBB SHY HASHEEEN BAAT MERI JAWWNN 🥺🎀💋
+MERAA PYAAR VV HOO 💗💋🌏🎀🫠
+
+🎀✨🎀 HAPPY 1 YEAR WITH EACH OTHER 🎀✨🎀
+🌷 (26 JUNE 2025) 🌷
+
+Mehhh wadddaw krtiunnn hmeshaaa hushhh rkhungiii!! 🫠💗🎀
+Tmharyyy saath zindagiii brhhh akhriii saaans tk rahungiii 🫠🫠🎀🌏
+Hrrr mushqilll meh saaath dungiiii!! 🫂💗
+Jooo mujhhh syyy huwaaa krungiwwww 🍼🫠
+Prrr wadddawh krtiii hun k meh….
+💗🎀🫂🌏
+********* HMESHA APP K SAAATH RAHUNGIII *********
+🫠🫠💗🎀🌏🫂
+🌙✨💋
+“ L O V E  Y O U H  J A W W W N N !! ”
+💋💗🌙👒✨</div>
+        </div>
+
+        <div class="footer-text">🌼 Made with all my love for youu 💛 ✨</div>
 
     </div>
 
+    <script>
+        function showMemory(id) {
+            const m = document.getElementById('memBox');
+            if(id === 1) m.innerText = "akhriii sans tk pyaar krunga (It's No. 1)";
+            if(id === 2) m.innerText = "hud ko b war du tujh pr (It's No. 2)";
+            if(id === 3) m.innerText = "merii zareeen kuch ghlt nhi kr sktiii 🥺💘 (It's No. 3)";
+        }
+
+        function verifyPassword() {
+            const val = document.getElementById('passIn').value.trim().toLowerCase();
+            const box = document.getElementById('passBox');
+            if(val !== "") {
+                box.innerHTML = `<div>mellly noonew ko to shb ptaw ae 🤧👒🫠🍼</div><div class="sticker">💋💋 muahh!</div>`;
+            }
+        }
+
+        function seekFeeder(found, btn) {
+            const f = document.getElementById('feedBox');
+            if(found) {
+                btn.innerText = "🍼";
+                f.innerHTML = `You Won! Found the feeder! <div class="sticker">💋💝 Muahhh!</div>`;
+            } else {
+                btn.style.opacity = "0.3";
+                f.innerText = "Oops! Keep looking... 👀";
+            }
+        }
+
+        let total = 0;
+        function clickCounter() {
+            total++;
+            document.getElementById('clickVal').innerText = total;
+        }
+    </script>
 </body>
 </html>
